@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SuperMarket — Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Admin Panel</h1>
+    <nav>
+      <button id="logoutBtn" class="hidden">Logout</button>
+      <a href="index.html" target="_blank">Open Store</a>
+    </nav>
+  </header>
+
+  <main class="admin-main">
+    <section id="authSection">
+      <h2>Admin Login</h2>
+      <input id="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+      <div id="authMsg" class="muted"></div>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <h2>Products</h2>
+
+      <form id="productForm">
+        <input id="pId" type="hidden" />
+        <input id="name" placeholder="Product name" required />
+        <input id="price" type="number" placeholder="Price" step="0.01" required />
+        <input id="stock" type="number" placeholder="Stock (qty)" value="10" required />
+        <input id="category" placeholder="Category" />
+        <textarea id="desc" placeholder="Short description"></textarea>
+        <input id="imageFile" type="file" accept="image/*" />
+        <button id="saveProductBtn" type="submit">Save Product</button>
+      </form>
+
+      <ul id="productList"></ul>
+    </section>
+  </main>
+
+  <script src="firebase-config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
+  <script src="admin.js"></script>
+</body>
+</html>
