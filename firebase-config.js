@@ -1,17 +1,20 @@
-// Create a Firebase Web App in console and paste the config here.
-// Do NOT commit real credentials publicly if you care about privacy — for simple projects it's common to keep this file in repo.
-// Replace the placeholders below with your Firebase config object.
+// firebase-config.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+import { getStorage } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
+
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "SENDER_ID",
-  appId: "APP_ID"
+  apiKey: "AIzaSyBwLQmCjLO5YuZG8VAZHbVVwYCJmES4v8o",
+  authDomain: "supermarket-store-a4508.firebaseapp.com",
+  projectId: "supermarket-store-a4508",
+  storageBucket: "supermarket-store-a4508.firebasestorage.app",
+  messagingSenderId: "459333411299",
+  appId: "1:459333411299:web:a533f52cfff281cbc080d6",
+  measurementId: "G-CNSBYS7P30"
 };
 
-// init
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-const storage = firebase.storage();
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+export const storage = getStorage(app);
