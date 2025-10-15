@@ -1,53 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SuperMarket — Admin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Supermarket</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <h1>Admin Panel</h1>
-    <nav>
-      <button id="logoutBtn" class="hidden">Logout</button>
-      <a href="index.html" target="_blank">Open Store</a>
-    </nav>
-  </header>
+  <h1>Admin Panel</h1>
 
-  <main class="admin-main">
-    <section id="authSection">
-      <h2>Admin Login</h2>
-      <input id="email" placeholder="Email" />
-      <input id="password" type="password" placeholder="Password" />
-      <button id="loginBtn">Login</button>
-      <div id="authMsg" class="muted"></div>
-    </section>
+  <div id="login-section">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginBtn">Login</button>
+  </div>
 
-    <section id="dashboard" class="hidden">
-      <h2>Products</h2>
+  <div id="admin-section" style="display:none;">
+    <h2>Add Product</h2>
+    <input type="text" id="product-name" placeholder="Product Name">
+    <input type="number" id="product-price" placeholder="Price">
+    <input type="file" id="product-image">
+    <button id="addBtn">Add Product</button>
 
-      <form id="productForm">
-        <input id="pId" type="hidden" />
-        <input id="name" placeholder="Product name" required />
-        <input id="price" type="number" placeholder="Price" step="0.01" required />
-        <input id="stock" type="number" placeholder="Stock (qty)" value="10" required />
-        <input id="category" placeholder="Category" />
-        <textarea id="desc" placeholder="Short description"></textarea>
-        <input id="imageFile" type="file" accept="image/*" />
-        <button id="saveProductBtn" type="submit">Save Product</button>
-      </form>
+    <h3>Existing Products</h3>
+    <div id="product-list"></div>
+  </div>
 
-      <ul id="productList"></ul>
-    </section>
-  </main>
-
-  <script src="firebase-config.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
-
-  <script src="admin.js"></script>
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="admin.js"></script>
 </body>
 </html>
