@@ -1,50 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SuperMarket — Store</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supermarket Store</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <h1>SuperMarket</h1>
-    <nav>
-      <a href="admin.html" target="_blank">Admin (Login)</a>
-      <button id="openCartBtn">Cart (<span id="cartCount">0</span>)</button>
-    </nav>
+  <header>
+    <h1>🛒 Supermarket Store</h1>
   </header>
 
-  <main>
-    <section class="hero">
-      <input id="searchInput" placeholder="Search products..." />
-    </section>
+  <main id="product-list"></main>
 
-    <section class="products" id="products"></section>
-  </main>
+  <footer>
+    <p>© 2025 Supermarket Store</p>
+  </footer>
 
-  <!-- Cart modal -->
-  <div id="cartModal" class="cart-modal hidden">
-    <div class="cart-panel">
-      <button id="closeCartBtn">Close</button>
-      <h2>Your Cart</h2>
-      <ul id="cartItems"></ul>
-      <div class="cart-footer">
-        <div>Total: <strong id="cartTotal">0.00</strong></div>
-        <button id="checkoutBtn">Checkout (demo)</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Firebase config file (fill with your config) -->
-  <script src="firebase-config.js"></script>
-
-  <!-- Firebase compat SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
-
-  <script src="app.js"></script>
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
